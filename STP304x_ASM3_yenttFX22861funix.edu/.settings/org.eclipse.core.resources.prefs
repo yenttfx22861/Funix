@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/api/auto/utils/PropertiesFileUtils.java=UTF-8
+encoding//src/test/java/com/api/auto/testcase/TC_API_CreateWork.java=UTF-8
+encoding//src/test/java/com/api/auto/testcase/TC_API_Login.java=UTF-8

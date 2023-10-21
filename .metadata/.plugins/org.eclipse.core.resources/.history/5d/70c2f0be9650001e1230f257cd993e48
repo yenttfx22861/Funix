@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class lab2 {
+
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Nhập các hệ số a, b và c từ bàn phím
+        System.out.print("Nhập hệ số a: ");
+        float a = scanner.nextFloat();
+
+        System.out.print("Nhập hệ số b: ");
+        float b = scanner.nextFloat();
+
+        System.out.print("Nhập hệ số c: ");
+        float c = scanner.nextFloat();
+
+        // Tính delta
+        float delta = b * b - 4 * a * c;
+
+        // Kiểm tra giá trị của delta để xác định nghiệm của phương trình
+        if (delta > 0) {
+        	float x1 = (float) (-b + Math.sqrt(delta)) / (2 * a);
+            float x2 = (float) (-b - Math.sqrt(delta)) / (2 * a);
+            System.out.println("Phương trình có hai nghiệm phân biệt:");
+            System.out.println("x1 = " + x1);
+            System.out.println("x2 = " + x2);
+        } else if (delta == 0) {
+        	float x = -b / (2 * a);
+            System.out.println("Phương trình có một nghiệm kép:");
+            System.out.println("x = " + x);
+        } else {
+            System.out.println("Phương trình không có nghiệm thực.");
+        }
+
+        scanner.close();
+    }
+
+}

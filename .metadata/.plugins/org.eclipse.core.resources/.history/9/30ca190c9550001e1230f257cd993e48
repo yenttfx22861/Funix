@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class lab1 {
+	public static void main(String[] args) {
+		 // Khởi tạo đối tượng Scanner để nhập từ bàn phím
+       Scanner scanner = new Scanner(System.in);
+
+       // Nhập vào năm từ bàn phím
+       System.out.print("Nhập vào một số nguyên N (năm): ");
+       int nam = scanner.nextInt();
+
+       // Kiểm tra xem năm có phải là năm nhuận hay không
+       boolean dk1 = nam % 400 == 0;
+       boolean dk2 = nam % 4 == 0;
+       boolean dk3 = nam % 100 != 0;
+
+       if ((nam % 400 == 0) || ((nam % 4 == 0) && (nam % 100 != 0))) {
+           System.out.println(nam + " là năm nhuận.");
+       } else {
+           System.out.println(nam + " không phải là năm nhuận.");
+       }
+       
+       // Đóng đối tượng Scanner
+       scanner.close();
+	}
+}

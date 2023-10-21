@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Bai1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập năm: ");
+        int year = scanner.nextInt();
+        
+        boolean isLeapYear = false;
+
+        // Kiểm tra điều kiện DK1: Kiểm tra có chia hết cho 400 không?
+        boolean dk1 = (year % 400 == 0);
+
+        // Kiểm tra điều kiện DK2: Kiểm tra có chia hết cho 4 không ?
+        boolean dk2 = (year % 4 == 0);
+
+        // Kiểm tra điều kiện DK3: Kiểm tra có không chia hết cho 100 không ?
+        boolean dk3 = (year % 100 != 0);
+
+        // Sử dụng if-else để kiểm tra tổng hợp các điều kiện
+        if (dk1 || (dk2 && dk3)) {
+            isLeapYear = true;
+        }
+
+        if (isLeapYear) {
+            System.out.println(year + " là năm nhuận.");
+        } else {
+            System.out.println(year + " không phải là năm nhuận.");
+        }
+    }
+}

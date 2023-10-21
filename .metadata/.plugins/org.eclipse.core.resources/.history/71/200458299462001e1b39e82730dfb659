@@ -1,0 +1,87 @@
+package com.automation.testcase;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.ITestResult;
+
+import com.automation.base.DriverInstance;
+import com.automation.pom.LoginPage;
+import com.automation.utils.CaptureScreenshot;
+import com.automation.utils.PropertiesFileUtils;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class TC_LoginTest extends DriverInstance {
+
+    @Test(dataProvider = "Excel")
+    public void TC01_LoginFirstAccount(String email, String password) throws InterruptedException {
+        driver.get(PropertiesFileUtils.getProperty("url")); // Load URL from properties file
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        WebElement iconSignIn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PropertiesFileUtils.getProperty("icon_signin"))));
+        iconSignIn.click();
+
+        LoginPage loginPage = new LoginPage(driver);
+        PageFactory.initElements(driver, loginPage);
+
+        loginPage.enterEmail(email);
+        loginPage.enterPassword(password);
+        
+        // Capture screenshot before clicking SignIn button
+        CaptureScreenshot.takeScreenshot(driver, email + "_beforeSignIn");
+        
+        loginPage.clickSignIn();
+        
+        // Capture screenshot after clicking SignIn button
+        CaptureScreenshot.takeScreenshot(driver, email + "_afterSignIn");
+
+        WebElement iconSignout = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PropertiesFileUtils.getProperty("icon_signout"))));
+        if (iconSignout.isDisplayed()) {
+            iconSignout.click();
+        }
+
+        Thread.sleep(2000);
+    }
+
+    @DataProvider(name = "Excel")
+    public Object[][] testDataGenerator() throws IOException {
+        FileInputStream fileInputStream = new FileInputStream("./data/assignment2_data_test.xlsx");
+        XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
+        XSSFSheet sheet = workbook.getSheetAt(0);
+
+        int rowCount = sheet.getLastRowNum() + 1; // Add 1 to include the last row
+        int columnCount = 2; // Two columns: email and password
+
+        Object[][] data = new Object[rowCount][columnCount];
+
+        for (int i = 0; i < rowCount; i++) {
+            Row row = sheet.getRow(i);
+            Cell cellEmail = row.getCell(0); // Column 0 is email
+            Cell cellPassword = row.getCell(1); // Column 1 is password
+
+            data[i][0] = cellEmail.toString();
+            data[i][1] = cellPassword.toString();
+        }
+
+        workbook.close();
+        fileInputStream.close();
+
+        return data;
+    }
+
+   
+}

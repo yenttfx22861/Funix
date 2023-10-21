@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel="false">
+    <test name="LoginTest">
+        <classes>
+            <class name="com.automation.testcase.TC_LoginTest"/>
+        </classes>
+    </test>
+</suite>

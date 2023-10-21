@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-10-12T21:18:12 ICT" name="Default suite" finished-at="2023-10-12T21:18:17 ICT" duration-ms="5023">
+    <groups>
+    </groups>
+    <test started-at="2023-10-12T21:18:12 ICT" name="Default test" finished-at="2023-10-12T21:18:17 ICT" duration-ms="5023">
+      <class name="testcase.Example1Test">
+        <test-method is-config="true" signature="init()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:12 ICT" name="init" finished-at="2023-10-12T21:18:15 ICT" duration-ms="3497" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="T01_StatusCodeTest()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:15 ICT" name="T01_StatusCodeTest" finished-at="2023-10-12T21:18:15 ICT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T01_StatusCodeTest -->
+        <test-method signature="T02_IdChecked()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:15 ICT" name="T02_IdChecked" finished-at="2023-10-12T21:18:15 ICT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T02_IdChecked -->
+        <test-method signature="T03_EmailChecked()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:15 ICT" name="T03_EmailChecked" finished-at="2023-10-12T21:18:15 ICT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T03_EmailChecked -->
+        <test-method signature="T04_EmailChecked()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:15 ICT" name="T04_EmailChecked" finished-at="2023-10-12T21:18:15 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T04_EmailChecked -->
+        <test-method signature="T05_EmailChecked()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:15 ICT" name="T05_EmailChecked" finished-at="2023-10-12T21:18:15 ICT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T05_EmailChecked -->
+        <test-method signature="T06_AvatarChecked()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:15 ICT" name="T06_AvatarChecked" finished-at="2023-10-12T21:18:15 ICT" duration-ms="7" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T06_AvatarChecked -->
+        <test-method signature="T07_Compare_id()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:15 ICT" name="T07_Compare_id" finished-at="2023-10-12T21:18:17 ICT" duration-ms="1380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- T07_Compare_id -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:testcase.Example1Test@7e7be63f]" started-at="2023-10-12T21:18:17 ICT" name="afterTest" finished-at="2023-10-12T21:18:17 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- testcase.Example1Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
