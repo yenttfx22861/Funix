@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "70be6e8f-70f0-4a5c-b435-88df97a97efe",
+		"name": "ASM3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28900873"
+	},
+	"item": [
+		{
+			"name": "Dang Ky Ung Vien",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Truongyen",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "yenttFX22861@funix.edu.vn",
+							"type": "text"
+						},
+						{
+							"key": "account",
+							"value": "Yentt",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "0397212474",
+							"type": "text"
+						},
+						{
+							"key": "sex",
+							"value": "nữ",
+							"type": "text"
+						},
+						{
+							"key": "birthday",
+							"value": "20/02/2000",
+							"type": "text"
+						},
+						{
+							"key": "experience",
+							"value": "intern",
+							"type": "text"
+						},
+						{
+							"key": "skill",
+							"value": "none",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "none",
+							"type": "text"
+						},
+						{
+							"key": "foreiginLanguage",
+							"value": "English",
+							"type": "text"
+						},
+						{
+							"key": "education",
+							"value": "College",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/PC1/Downloads/339471417_564521308820158_7318962987810648809_n.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url asm3}}/users/register",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dang nhap",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account\": \"Yentt\",\r\n    \"password\": 200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url asm3}}/users/login",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login tuyendung",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account\":\"Truongyen\",\r\n    \"password\":\"Truongyen20@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url asm3}}/company/login-company",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"company",
+						"login-company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "danhsachcongviec",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url asm3}}/work/list-work",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"work",
+						"list-work"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "thong tin user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account\": \"Yentt\",\r\n    \"password\": 200\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url asm3}}/users/get-information-user?token={{tokenasm3}}",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"users",
+						"get-information-user"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{tokenasm3}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "lay danh sach ung vien",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url asm3}}/work-user/get-all-admin",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"work-user",
+						"get-all-admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create application",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{tokenasm3}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jobID\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url asm3}}/application/create-application",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"application",
+						"create-application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "laydanhsachcongty",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url asm3}}/company/getAllCompany",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"company",
+						"getAllCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "laydanhsachdonungtuyen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url asm3}}/application/getall-application",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"application",
+						"getall-application"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "laydanhsachuser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url asm3}}/users/getAllUsers",
+					"host": [
+						"{{base_url asm3}}"
+					],
+					"path": [
+						"users",
+						"getAllUsers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
